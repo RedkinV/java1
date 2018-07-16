@@ -11,9 +11,12 @@ public class dz1_redkin_vladimir {
         boolean bool=true;
         char ch='a';
 
-        float f, a=2,b=4,c=6,d=-9;
-        f=getResult(a,b,c,d);
-        System.out.println("a*(b+(c/d)))= "+f);
+        float f, a=2,b=4,c=6,d=0;
+        if (d!=0){
+            f = getResult(a, b, c, d);
+            System.out.println("a*(b+(c/d)))= " + f);
+        } else {System.out.println("Ошибка. Деление на 0");}
+
         bool=evaluateNumber(a,b);
         System.out.println("10<=(a+b)>=20 ?  -> "+bool);
         isPositive(a2);
