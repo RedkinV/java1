@@ -18,15 +18,21 @@ public class Plate {
         if (n<food) {food -= n; return true;}
         else return false;
     }
-    public void info() {
-        System.out.printf("plate:%-9d Plate capacity %d%n",food,maxFood);
-    }
     public void addFood(int addFood){
         if((food+addFood)>maxFood) food=maxFood;
         else food+=addFood;
     }
-
+    public void info() {
+        System.out.printf("Еды в тарелке: %-5d Емкость тарелки: %d%n",food,maxFood);
+    }
     public int getFood() {
         return food;
+    }
+
+//метод для варианта №2
+    public void eat(Cat c){
+        if(c.getAppetite()<food){food-=c.getAppetite();c.setFullness(true);}
+        else c.setFullness(false);
+
     }
 }
