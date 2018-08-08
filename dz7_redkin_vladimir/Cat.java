@@ -11,12 +11,11 @@ public class Cat {
     }
 
     public Cat(String name, int appetite, boolean fullness) {
-        this.name = name;
-        this.appetite = appetite;
+        this(name,appetite);
         this.fullness = fullness;
     }
 
-    public void eat(Plate p) {
+    public void eat(Plate p) {//            методя для варианта №1
         if(p.decreaseFood(appetite)) fullness=true;
         else fullness=false;
     }
@@ -25,7 +24,15 @@ public class Cat {
         return fullness;
     }
 
+    public void setFullness(boolean fullness) {
+        this.fullness = fullness;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public int getAppetite() {
+        return appetite;
     }
 }
