@@ -30,9 +30,15 @@ public class Plate {
     }
 
 //метод для варианта №2
-    public void eat(Cat c){
-        if(c.getAppetite()<food){food-=c.getAppetite();c.setFullness(true);}
-        else c.setFullness(false);
+    public void eat(Object o){
+        if (o == null) {System.out.println("передан нулевой объект"); return;}
+        if (o instanceof Cat) {
+            Cat c = (Cat) o;
+            if (c.getAppetite() < food) {
+                food -= c.getAppetite();
+                c.setFullness(true);
+            } else c.setFullness(false);
+        } else System.out.println("Только Кошки едят из этой тарелки");
 
     }
 }
