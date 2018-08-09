@@ -15,9 +15,13 @@ public class Cat {
         this.fullness = fullness;
     }
 
-    public void eat(Plate p) {//            методя для варианта №1
-        if(p.decreaseFood(appetite)) fullness=true;
-        else fullness=false;
+    public void eat(Object o) {//            методя для варианта №1
+        if (o == null) {System.out.println("передан нулевой объект"); return;}
+        if (o instanceof Plate) {
+            Plate p=(Plate)o;
+            if (p.decreaseFood(appetite)) fullness = true;
+            else fullness = false;
+        } else System.out.println("Кошки могут есть только из Тарелки");
     }
 
     public boolean isFullness() {
